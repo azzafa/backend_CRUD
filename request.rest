@@ -1,0 +1,132 @@
+GET http://localhost:5000/users 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJuYW1lIjoiYW5kYXJhIiwiZW1haWwiOiJhbmRhcmFAZ21haWwuY29tIiwiaWF0IjoxNjYyMDM2ODM5LCJleHAiOjE2NjIwMzY4NTl9.0U2ESe9L7DrwfyGz61EgeRfUeGfPUqYpM9uj1J4MvJo
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+ 
+{
+    "name": "andara",
+    "email": "andara@gmail.com",
+    "password": "123456",
+    "confPassword": "123456"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "andara@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5000/token 
+
+###
+DELETE  http://localhost:5000/logout
+
+// barang
+###
+GET http://localhost:5000/donasi/
+
+###
+GET http://localhost:5000/donasi/6
+
+###
+POST http://localhost:5000/donasi
+Content-Type: application/json
+
+{
+    "id_kategori" : "1",
+    "nama_brg" : "buku",
+    "kondisi" : "bekas",
+    "deskripsi" : "kaca",
+    "gmr" : "-",
+    "kategori" : "buku dan majalah",
+    "alamat" : "padang",
+    "no_hp" : "123456789"
+}
+
+###
+PATCH http://localhost:5000/donasi/8
+Content-Type: application/json
+
+{
+    "id_kategori" : "2",
+    "nama_brg" : "gelas",
+    "kondisi" : "bekas",
+    "deskripsi" : "kaca",
+    "gmr" : "-",
+    "kategori" : "perlengkapan dapur",
+    "alamat" : "padang",
+    "no_hp" : "123456789"
+}
+
+###
+DELETE http://localhost:5000/donasi/6
+
+// order
+###
+GET http://localhost:5000/order/
+
+###
+GET http://localhost:5000/order/6
+
+###
+POST http://localhost:5000/order
+Content-Type: application/json
+
+{
+    "fullName" : "dara",
+    "address" : "padang",
+    "postalCode" : "1234",
+    "no_hp" : "123456789"
+}
+
+###
+PATCH http://localhost:5000/order/8
+Content-Type: application/json
+
+{
+    "waktu" : "08:00",
+    "suhu_real" : 200,
+    "suhu_diset" : 400
+}
+
+###
+DELETE http://localhost:5000/order/6
+
+// order
+###
+GET http://localhost:5000/histori/
+
+###
+GET http://localhost:5000/histori/6
+
+###
+POST http://localhost:5000/histori
+Content-Type: application/json
+
+{
+    "id_order" : "1",
+    "nama_order" : "siska",
+    "alamat_order" : "padang",
+    "barang_order" : "gelas",
+    "hp_order" : "123456789",
+    "ongkir" : "12000",
+    "status" : "belum kirim"
+}
+
+###
+PATCH http://localhost:5000/histori/8
+Content-Type: application/json
+
+{
+    "waktu" : "08:00",
+    "suhu_real" : 200,
+    "suhu_diset" : 400
+}
+
+###
+DELETE http://localhost:5000/histori/6
